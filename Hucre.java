@@ -1,4 +1,5 @@
 // Hücre sınıfı tüm hücreler için temel işlevleri sağlıyor
+import java.util.List;
 public abstract class Hucre {
     protected String id;
     protected DNA dna;
@@ -15,7 +16,7 @@ public abstract class Hucre {
     
     
     
-    public abstract void bolun();
+    public abstract List<DNA.Nükleotit> bolun();
 
     @Override
     public String toString() {

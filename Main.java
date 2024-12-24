@@ -39,16 +39,16 @@ public class Main {
             System.out.println("Mutasyonlu DNA: " + ebeveynDNA+"\n");
             
             // Mitoz Bölünme
-            ArrayList<Hucre> mitoz_yavrular = ebeveynHucre.mitoz();
-            System.out.println(mitoz_yavrular.getFirst());
-            System.out.println(mitoz_yavrular.getLast());
+            ArrayList<Hucre> mitoz_urunler = ebeveynHucre.mitoz();
+            System.out.println(mitoz_urunler.getFirst());
+            System.out.println(mitoz_urunler.getLast());
             ozellesmisHucre.bolun();
             System.out.println();
             
             // Mayoz Bölünme
-            ArrayList<Hucre> mayoz_yavrular = ebeveynHucre.mayoz(ozellesmisHucre);
-            System.out.println(mayoz_yavrular.getFirst());
-            System.out.println(mayoz_yavrular.getLast());
+            ArrayList<Hucre> mayoz_urunler = ebeveynHucre.mayoz(ozellesmisHucre);
+            System.out.println(mayoz_urunler.getFirst());
+            System.out.println(mayoz_urunler.getLast());
 
             
             //hata yakalama

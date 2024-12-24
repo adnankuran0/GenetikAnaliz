@@ -9,9 +9,9 @@ public class EbeveynHucre extends Hucre implements BolunmeIslemi {
     }
 
     @Override
-    public void bolun() {
-        List<DNA.Nükleotit> zincir1Parça1 = new ArrayList<>(dna.getZincir1().subList(0, dna.getZincir1().size() / 2));
-
+    public List<DNA.Nükleotit> bolun() {
+        List<DNA.Nükleotit> zincir1Parca = new ArrayList<>(dna.getZincir1().subList(0, dna.getZincir1().size() / 2));
+        return zincir1Parca;
     }
 
     @Override
@@ -19,15 +19,15 @@ public class EbeveynHucre extends Hucre implements BolunmeIslemi {
         System.out.println("Mitoz bolunme gerceklestiriliyor...");
         DNA kopyalananDNA = dna.kopyala();
         // kopyalanan DNAya sahip iki yeni hücre oluşturuyoruz
-        Hucre yavruHucre1 = new OzellesmisHucre("1", kopyalananDNA);
-        Hucre yavruHucre2 = new OzellesmisHucre("2", kopyalananDNA);
+        Hucre yeniHucre1 = new OzellesmisHucre("1", kopyalananDNA);
+        Hucre yeniHucre2 = new OzellesmisHucre("2", kopyalananDNA);
         
-        ArrayList<Hucre> yavruHucreler = new ArrayList<>();
-        yavruHucreler.add(yavruHucre1);
-        yavruHucreler.add(yavruHucre2);
+        ArrayList<Hucre> yeniHucreler = new ArrayList<>();
+        yeniHucreler.add(yeniHucre1);
+        yeniHucreler.add(yeniHucre2);
         
         System.out.println("Mitoz bolunme gerceklestirildi!");
-        return yavruHucreler;
+        return yeniHucreler;
     }
 
     @Override
@@ -40,35 +40,35 @@ public class EbeveynHucre extends Hucre implements BolunmeIslemi {
         }
 
         // DNA zincirlerini ikiye bölüyoruz
-        List<DNA.Nükleotit> zincir1Parça1 = new ArrayList<>(dna.getZincir1().subList(0, dna.getZincir1().size() / 2));
-        List<DNA.Nükleotit> zincir1Parça2 = new ArrayList<>(dna.getZincir1().subList(dna.getZincir1().size() / 2, dna.getZincir1().size()));
+        List<DNA.Nükleotit> zincir1Parca1 = new ArrayList<>(dna.getZincir1().subList(0, dna.getZincir1().size() / 2));
+        List<DNA.Nükleotit> zincir1Parca2 = new ArrayList<>(dna.getZincir1().subList(dna.getZincir1().size() / 2, dna.getZincir1().size()));
 
-        List<DNA.Nükleotit> zincir2Parça1 = new ArrayList<>(digerHucre.dna.getZincir1().subList(0, digerHucre.dna.getZincir1().size() / 2));
-        List<DNA.Nükleotit> zincir2Parça2 = new ArrayList<>(digerHucre.dna.getZincir1().subList(digerHucre.dna.getZincir1().size() / 2, digerHucre.dna.getZincir1().size()));
+        List<DNA.Nükleotit> zincir2Parca1 = new ArrayList<>(digerHucre.dna.getZincir1().subList(0, digerHucre.dna.getZincir1().size() / 2));
+        List<DNA.Nükleotit> zincir2Parca2 = new ArrayList<>(digerHucre.dna.getZincir1().subList(digerHucre.dna.getZincir1().size() / 2, digerHucre.dna.getZincir1().size()));
 
-        // Yavru hücrelerin DNA'sını oluşturuyoruz
-        List<DNA.Nükleotit> yavruZincir1 = new ArrayList<>();
-        yavruZincir1.addAll(zincir1Parça1); // İlk hücrenin ilk yarısı
-        yavruZincir1.addAll(zincir2Parça2); // Diğer hücrenin ikinci yarısı
+        // yeni hücrelerin DNA'sını oluşturuyoruz
+        List<DNA.Nükleotit> yeniZincir1 = new ArrayList<>();
+        yeniZincir1.addAll(zincir1Parca1); // İlk hücrenin ilk yarısı
+        yeniZincir1.addAll(zincir2Parca2); // Diğer hücrenin ikinci yarısı
 
-        List<DNA.Nükleotit> yavruZincir2 = new ArrayList<>();
-        yavruZincir2.addAll(zincir2Parça1); // Diğer hücrenin ilk yarısı
-        yavruZincir2.addAll(zincir1Parça2); // İlk hücrenin ikinci yarısı
+        List<DNA.Nükleotit> yeniZincir2 = new ArrayList<>();
+        yeniZincir2.addAll(zincir2Parca1); // Diğer hücrenin ilk yarısı
+        yeniZincir2.addAll(zincir1Parca2); // İlk hücrenin ikinci yarısı
 
         // Yeni DNA'lar oluşturuyoruz
-        DNA yavruDNA1 = new DNA(DNA.zincirdenStringiOluştur(yavruZincir1));
-        DNA yavruDNA2 = new DNA(DNA.zincirdenStringiOluştur(yavruZincir2));
+        DNA yeniDNA1 = new DNA(DNA.zincirdenStringiOluştur(yeniZincir1));
+        DNA yeniDNA2 = new DNA(DNA.zincirdenStringiOluştur(yeniZincir2));
 
-        // Yavru hücreleri oluşturuyoruz
-        Hucre yavruHucre1 = new OzellesmisHucre("1", yavruDNA1);
-        Hucre yavruHucre2 = new OzellesmisHucre("2", yavruDNA2);
+        // yeni hücreleri oluşturuyoruz
+        Hucre yeniHucre1 = new OzellesmisHucre("1", yeniDNA1);
+        Hucre yeniHucre2 = new OzellesmisHucre("2", yeniDNA2);
 
-        // Yavru hücreleri listeye ekliyoruz
-        ArrayList<Hucre> yavruHucreler = new ArrayList<>();
-        yavruHucreler.add(yavruHucre1);
-        yavruHucreler.add(yavruHucre2);
+        // yeni hücreleri listeye ekliyoruz
+        ArrayList<Hucre> yeniHucreler = new ArrayList<>();
+        yeniHucreler.add(yeniHucre1);
+        yeniHucreler.add(yeniHucre2);
 
         System.out.println("Mayoz bolunme gerceklestirildi!");
-        return yavruHucreler;
+        return yeniHucreler;
     }
 }
