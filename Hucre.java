@@ -16,7 +16,7 @@ public abstract class Hucre {
     
     
     
-    public abstract List<DNA.Nükleotit> bolun();
+    public abstract List<Hucre> bolun();
 
     @Override
     public String toString() {

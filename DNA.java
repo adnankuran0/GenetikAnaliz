@@ -5,7 +5,7 @@ import java.util.List;
 public class DNA {
     // Nükleotitleri iki farklı zincirde tutuyoruz
     private List<Nükleotit> zincir1;
-    private List<Nükleotit> zincir2;
+    private final List<Nükleotit> zincir2;
 
     public DNA(String dizi1) {
         zincir1 = new ArrayList<>();

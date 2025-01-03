@@ -1,15 +1,7 @@
 import java.util.ArrayList;
 
 /*
-Bu proje, hücre bölünmesini ve DNA yönetimini simüle eden bir yapıdır. 
-Özellikle mayoz bölünme süreci üzerine odaklanmaktadır. 
-Proje, her hücrenin içinde DNA bulunan bir yapıyı temel alır.
-Mayoz bölünme sırasında, iki hücrenin DNA'sı yarıya bölünerek yeni yavru hücreler oluşturulur.
-Bu süreçte genetik çeşitlilik sağlanır.
-
-Projede ayrıca, DNA yapısının doğruluğu, bölünme hataları ve hücre sayısı gibi parametrelerin 
-analiz edilmesi için bir analizci sınıfı önerilmektedir. Bu sınıf, bölünme sürecini ve genetik 
-değişiklikleri izler ve raporlar.
+Bu proje, hücre bölünmesini ve DNA yönetimini basit kapsamda simüle etmeyi amaçlar.
 */
 
 public class Main {

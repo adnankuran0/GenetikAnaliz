@@ -9,9 +9,9 @@ public class EbeveynHucre extends Hucre implements BolunmeIslemi {
     }
 
     @Override
-    public List<DNA.Nükleotit> bolun() {
-        List<DNA.Nükleotit> zincir1Parca = new ArrayList<>(dna.getZincir1().subList(0, dna.getZincir1().size() / 2));
-        return zincir1Parca;
+    public List<Hucre> bolun() {
+        // varılsayan bölünme olarak mitoz gerçekleştiriliyor
+        return mitoz();
     }
 
     @Override

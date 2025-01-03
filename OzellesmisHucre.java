@@ -8,8 +8,7 @@ public class OzellesmisHucre extends Hucre {
     }
 
     @Override
-    public List<DNA.Nükleotit> bolun() {
-        System.out.println("Ozellesmis hucreler daha fazla bolunemez.");
-        return new ArrayList<>();  // Boş bir liste döndürüyoruz
+    public List<Hucre> bolun() {
+        throw new BolunmeIstisnasi("Ozellesmis hucreler bolunemez.");
     }
 }
